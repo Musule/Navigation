@@ -81,7 +81,9 @@ npm run dev
 （3）浏览器地址访问
 >http://localhost:8088
 
-（4）查看你本地IP地址，把localhost替换成你的ip地址（http://IP:8088），发给其他测试小伙伴，他们就能在自己电脑上访问；另外一种办法是将根目录下/dist/static/index.html放入tomcat供外网其他人员使用
+（4）查看你本地IP地址，把localhost替换成你的ip地址（http://IP:8088），
+
+发给其他测试小伙伴，他们就能在自己电脑上访问；另外一种办法是将根目录下/dist/static/index.html放入tomcat供外网其他人员使用
 
 
 
