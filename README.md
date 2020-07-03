@@ -74,7 +74,7 @@ cd /Navigation
 ```bash
 npm install
 ```
-③启动后端
+③启动前端
 ```bash
 npm run dev
 ```
