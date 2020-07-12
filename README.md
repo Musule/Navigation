@@ -14,6 +14,8 @@
 * 删除网址
 * 编辑网址
 * 查询网址
+* 新建管理员账号、菜单权限
+* 编辑管理员账号、菜单权限
 * 导出xls
 
 ### 【管理员】
@@ -23,8 +25,13 @@
 ![img](./static/image/demo2.png)
 
 
-## 安装
+## 开发环境
 
+|名称|版本|
+|-|-|
+|nodejs|8.11.4|
+
+## 安装
 1.下载Nodejs
 
 >http://nodejs.cn/download/
@@ -46,11 +53,13 @@ npm config set registry http://registry.npm.taobao.org/
 
 （1）服务端
 
-① 进入目录
+① 打开终端窗口，进入目录/Navigation/server下
+
 ```bash
 cd /Navigation/server
 ```
 ② 执行安装
+
 ```bash
 npm install
 ```
@@ -62,17 +71,30 @@ node server
 
 ![img](static/image/back-end-server.png)
 
-（2）客户端
+（2）前端
 
-①进入目录
+①再次打开新的终端窗口，进入目录/Navigation下，执行命令行如下命令：
+
 ```bash
 cd /Navigation
 ```
-②执行安装
+
+②安装
+
+* 安装cnpm
+```
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+* 安装node-sass
+```bash
+cnpm install node-sass --savenpm run dev
+```
+* 安装
 ```bash
 npm install
 ```
-③启动后端
+③启动前端
 ```bash
 npm run dev
 ```
@@ -81,11 +103,7 @@ npm run dev
 （3）浏览器地址访问
 >http://localhost:8088
 
-（4）查看你本地IP地址，把localhost替换成你的ip地址（http://IP:8088），
-
-发给其他测试小伙伴，他们就能在自己电脑上访问；另外一种办法是将根目录下/dist/static/index.html放入tomcat供外网其他人员使用
-
-
+（4）查看你本地IP地址，把localhost替换成你的ip地址（http://IP:8088），发给其他测试小伙伴，他们就能在自己电脑上访问；另外一种办法是将根目录下/dist/static/index.html放入tomcat供外网其他人员使用
 
 # 操作手册
 
@@ -95,8 +113,6 @@ npm run dev
 密码：123456
 
 ![img](static/image/login.jpg)
-
->更改初始密码，可以通过根目录下文件/server/public/User.json
 
 >访客无需登录，仅有查看权限
 
@@ -123,3 +139,6 @@ npm run dev
 ![img](static/image/add_output.jpg)
 
 
+# 修复记录
+
+* 2020-07-12 修复node-sass版本4.11.0因版本过低导致的报错
