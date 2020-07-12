@@ -88,7 +88,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 * 安装node-sass
 ```bash
-cnpm install node-sass --savenpm run dev
+cnpm install node-sass --save
 ```
 * 安装
 ```bash
