@@ -17,9 +17,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
   },
-    devtool: config.dev.devtool,
+  // cheap-module-eval-source-map is faster for development
+  devtool: config.dev.devtool,
 
-    devServer: {
+  // these devServer options should be customized in /config/index.js
+  devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
@@ -27,7 +29,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       ],
     },
     hot: true,
-    contentBase: false,     compress: true,
+    contentBase: false, // since we use CopyWebpackPlugin.
+    compress: true,
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,
     open: config.dev.autoOpenBrowser,
@@ -36,7 +39,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       : false,
     publicPath: config.dev.assetsPublicPath,
     proxy: config.dev.proxyTable,
-    quiet: true,     watchOptions: {
+    quiet: true, // necessary for FriendlyErrorsPlugin
+    watchOptions: {
       poll: config.dev.poll,
     }
   },
@@ -45,13 +49,16 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       'process.env': require('../config/dev.env')
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),     new webpack.NoEmitOnErrorsPlugin(),
-        new HtmlWebpackPlugin({
+    new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
+    new webpack.NoEmitOnErrorsPlugin(),
+    // https://github.com/ampedandwired/html-webpack-plugin
+    new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
       inject: true
     }),
-        new CopyWebpackPlugin([
+    // copy custom static assets
+    new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '../static'),
         to: config.dev.assetsSubDirectory,
@@ -67,10 +74,13 @@ module.exports = new Promise((resolve, reject) => {
     if (err) {
       reject(err)
     } else {
-            process.env.PORT = port
-            devWebpackConfig.devServer.port = port
+      // publish the new Port, necessary for e2e tests
+      process.env.PORT = port
+      // add port to devServer config
+      devWebpackConfig.devServer.port = port
 
-            devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
+      // Add FriendlyErrorsPlugin
+      devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
           messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
         },

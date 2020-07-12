@@ -30,6 +30,7 @@
 |名称|版本|
 |-|-|
 |nodejs|8.11.4|
+|vue|2.X|
 
 ## 安装
 1.下载Nodejs
@@ -73,6 +74,10 @@ node server
 
 （2）前端
 
+第一种：你可以直接打开目录下/dist/index.html直接使用，或者将dist放入tomcat的webapp中实现web服务器让其他小伙伴也能通过ip地址访问
+
+第二种：你可以启动开发模式，步骤如下所示。
+
 ①再次打开新的终端窗口，进入目录/Navigation下，执行命令行如下命令：
 
 ```bash
@@ -103,11 +108,7 @@ npm run dev
 （3）浏览器地址访问
 >http://localhost:8088
 
-（4）查看你本地IP地址，把localhost替换成你的ip地址（http://IP:8088）
-
-发给其他测试小伙伴，他们就能在自己电脑上访问；
-
-另外一种办法是将根目录下/dist/static/index.html放入tomcat供外网其他人员使用
+（4）建议，使用另外一种办法是将根目录下/dist整个文件夹放入tomcat中供外网其他人员使用
 
 # 操作手册
 
