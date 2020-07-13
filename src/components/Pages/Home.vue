@@ -370,7 +370,7 @@ export default {
       tableData: [],
       tableData_result: [],
       currentPage: 1,
-      totalCount: 1,
+      totalCount: 0,
       pageSizes: [5, 10, 20, 30, 40, 50, 100],
       PageSize: 100,
       isDisplay: true,
