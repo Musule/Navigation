@@ -35,6 +35,8 @@
 ## 安装
 1.下载Nodejs
 
+（建议版本使用v12.13.0及以上）
+
 >http://nodejs.cn/download/
 
 2.安装Nodejs
@@ -50,41 +52,54 @@ npm config set registry http://registry.npm.taobao.org/
 
 >如果你已安装Nodejs环境，可跳过1和2步骤
 
-3.安装与使用
+## 使用
 
-（1）服务端
 
-① 打开终端窗口，进入目录/Navigation/server下
+### 直接使用
+
+#### 1.启动后端服务
+
+（1） 打开终端窗口，进入目录/Navigation/server下
 
 ```bash
 cd /Navigation/server
 ```
-② 执行安装
+（2） 执行安装
 
 ```bash
 npm install
 ```
 
-③启动后端
+（3） 启动后端
 ```bash
 node server
 ```
 
 ![img](static/image/back-end-server.png)
 
-（2）前端
+#### 2.打开前端页面
 
-第一种：你可以直接打开目录下/dist/index.html直接使用，或者将dist放入tomcat的webapp中实现web服务器让其他小伙伴也能通过ip地址访问
+打开目录下/dist/index.html直接使用，或者将dist放入tomcat的webapp中实现web服务器让其他小伙伴也能通过ip地
 
-第二种：你可以启动开发模式，步骤如下所示。
+![img](static/image/localOpen.png)
 
-①再次打开新的终端窗口，进入目录/Navigation下，执行命令行如下命令：
+### 二次开发
+
+#### 1.启动后端服务
+
+同上
+
+#### 2.启动前端页面
+
+（1）前端
+
+打开新的终端窗口，进入目录/Navigation下，执行命令行如下命令：
 
 ```bash
 cd /Navigation
 ```
 
-②安装
+（2）安装
 
 * 安装cnpm
 ```
@@ -92,14 +107,23 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
 
 * 安装node-sass
+
 ```bash
 cnpm install node-sass --save
 ```
-* 安装
+
+```
+npm install node-sass --save-dev
+
+```
+
+* 安装其他依赖
 ```bash
 npm install
 ```
-③启动前端
+
+（3）启动开发者模式
+
 ```bash
 npm run dev
 ```
@@ -108,7 +132,36 @@ npm run dev
 （3）浏览器地址访问
 >http://localhost:8088
 
-（4）建议，使用另外一种办法是将根目录下/dist整个文件夹放入tomcat中供外网其他人员使用
+
+![img](static/image/debug.png)
+
+（4）window平台报错：“Module build failed: Error: Cannot find module 'node-sass’解决”
+
+解决办法：
+
+在win10 系统中搜索框 输入 Windos PowerShell
+
+选择 管理员身份运行
+
+打开了powershell命令行之后,输入
+
+set-ExecutionPolicy RemoteSigned
+
+更改权限为A
+
+输入get-ExecutionPolicy
+
+如下图所示：
+
+![img](static/image/windowError.png)
+
+
+>参考：https://www.cnblogs.com/mfbzr/p/12274950.html
+
+
+
+
+
 
 # 操作手册
 
