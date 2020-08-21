@@ -200,3 +200,4 @@ set-ExecutionPolicy RemoteSigned
 # 修复记录
 
 * 2020-07-12 修复node-sass版本4.11.0因版本过低导致的报错
+* 2020-08-21 修复nodejs版本兼容v12.13.0
