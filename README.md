@@ -4,6 +4,8 @@
 
 > 导航网址
 
+recommend: [China-Gitee](https://gitee.com/liyinchi/Navigation)，[Other-Github](https://github.com/Musule/Navigation)
+
 ## 功能
 
 * 新增分类
