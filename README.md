@@ -35,11 +35,14 @@ recommend: [China-Gitee](https://gitee.com/liyinchi/Navigation)，[Other-Github]
 |vue|2.X|
 
 ## 安装
+
 1.下载Nodejs
 
-（建议版本使用v12.13.0及以上）
+（建议版本使用v12.13.0 小于v15.0）
 
->http://nodejs.cn/download/
+>https://npm.taobao.org/mirrors/node/v0.12.13/
+
+>如果已安装配置nodejs，可跳过此步骤
 
 2.安装Nodejs
 
