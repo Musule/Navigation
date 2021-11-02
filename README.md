@@ -67,7 +67,9 @@ docker run -d --name navigation-server -p 8006:8006 liyinchi/navigation-server
 ```
 ![image](https://user-images.githubusercontent.com/19643260/139857768-cac86ab2-6033-4f1e-abb2-f5946ae318d5.png)
 
-（4）访问
+（4）访问http:127.0.0.1:3000
+![image](https://user-images.githubusercontent.com/19643260/139861957-bd56fa86-cf19-4d5d-9abd-cc683d69edbf.png)
+
 
 后端端口：8006 前端端口：3000
 
