@@ -36,6 +36,43 @@ recommend: [China-Gitee](https://gitee.com/liyinchi/Navigation)，[Other-Github]
 
 ## 安装
 
+简单命令行即可使用
+
+## Docker安装方式（推荐）
+
+### 1.安装docker
+
+### 2.拉取镜像
+
+（1）前端镜像
+
+```shell
+docker pull liyinchi/navigation-frontend
+```
+
+（2）后端镜像
+
+```shell
+docker pull liyinchi/navigation-server
+```
+
+（3）启动容器
+
+```shell
+docker run -d --name navigation-frontend -p 3000:80 liyinchi/navigation-frontend
+```
+
+```shell
+docker run -d --name navigation-server -p 8006:8006 liyinchi/navigation-server
+```
+![image](https://user-images.githubusercontent.com/19643260/139857768-cac86ab2-6033-4f1e-abb2-f5946ae318d5.png)
+
+（4）访问
+
+后端端口：8006 前端端口：3000
+
+## 普通安装方式
+
 1.下载Nodejs
 
 （建议版本使用v12.13.0 小于v15.0）
