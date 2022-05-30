@@ -2,7 +2,12 @@
 
 [![npm](https://img.shields.io/npm/v/vue-lowdb.svg)](https://www.npmjs.com/package/vue-lowdb) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
-> 导航网址
+> 导航网址 
+> 
+> 
+> [在线demo](http://110.40.156.59:3000/#/Home)
+
+
 
 recommend: [China-Gitee](https://gitee.com/liyinchi/Navigation)，[Other-Github](https://github.com/Musule/Navigation)
 
@@ -250,3 +255,26 @@ set-ExecutionPolicy RemoteSigned
 
 * 2020-07-12 修复node-sass版本4.11.0因版本过低导致的报错
 * 2020-08-21 修复nodejs版本兼容v12.13.0
+
+
+​
+常见问题 ：
+
+1.前端请求地址报错
+
+解决办法：需要在前端项目打包时，将请求后端接口域名改成你的服务器地址
+
+前端项目请求地址：src/components/Global.vue
+
+```
+<script>
+// var server_url = "http://127.0.0.1:8006"; // 本地
+var server_url = "http://110.40.156.59:8006"; // 服务器
+```
+
+ 
+
+![image](https://user-images.githubusercontent.com/19643260/170998744-217ce02c-e852-4934-9fd7-1ff9306338e2.png)
+
+
+
